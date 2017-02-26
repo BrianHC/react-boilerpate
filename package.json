@@ -4,20 +4,34 @@
   "description": "boiler plate for react + webpack front end application",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-css": "lessc ./css/index.less ./public/index.css",
+    "watch-css": "npm run build-css && onchange css/** -- npm run build-css",
+    "start": "concurrently \"webpack --watch\" \"npm run watch-css \""
   },
   "author": "capurp",
   "license": "ISC",
   "dependencies": {
-    "babel": "^6.5.2",
-    "babel-core": "^6.13.2",
-    "babel-loader": "^6.2.4",
-    "babel-preset-react": "^6.11.1",
-    "react": "^15.3.0",
-    "react-dom": "^15.3.0",
-    "webpack": "^1.13.1"
+    "babel": "6.5.2",
+    "babel-core": "6.13.2",
+    "babel-loader": "6.2.4",
+    "babel-preset-react": "6.11.1",
+    "concurrently": "3.1.0",
+    "less": "2.7.1",
+    "moment": "2.17.1",
+    "parse": "1.9.1",
+    "react": "15.3.0",
+    "react-datepicker": "0.37.0",
+    "react-dom": "15.3.0",
+    "react-router": "2.8.1",
+    "react-select": "1.0.0-rc.2",
+    "redux": "3.6.0",
+    "webpack": "1.13.1"
   },
   "devDependencies": {
-    "babel-preset-es2015": "^6.13.2"
+    "babel-preset-es2015": "6.13.2",
+    "less-loader": "2.2.3",
+    "onchange": "^3.2.0",
+    "lodash": "4.17.2"
   }
 }

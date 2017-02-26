@@ -3,6 +3,7 @@ var webpack = require('webpack');
 module.exports = {
   context: __dirname,
   entry: "./app/index.js",
+  devtool: 'source-map',
   module:{
     loaders:[
       {
